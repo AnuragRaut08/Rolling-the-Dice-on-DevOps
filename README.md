@@ -171,11 +171,6 @@ Copy code
 kubectl get pods
 View Metrics: Access Grafana dashboards for application and cluster metrics.
 
-Screenshots
-CI/CD Pipeline in Jenkins
-
-Grafana Monitoring Dashboard
-
 Future Enhancements
 Implement automated rollback on deployment failure.
 Integrate Helm charts for simplified Kubernetes deployment.
