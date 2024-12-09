@@ -13,13 +13,10 @@ The project focuses on streamlining the deployment process for the Board Game Da
 - Continuous integration and deployment powered by Jenkins.
 - Application monitoring using Prometheus and Grafana.
 
-## **Architecture Diagram**
 
 ### **Board Game CI/CD Workflow**
+![image](https://github.com/user-attachments/assets/ecdcd84c-41d9-401a-a11e-beeea12daaa9)
 
-<p align="center">
-    <img src="file-5m6Zfn9iYTmSWt73U6gtiR" alt="Board Game CI/CD Workflow" width="80%">
-</p>
 
 ## **Implementation Steps**
 
