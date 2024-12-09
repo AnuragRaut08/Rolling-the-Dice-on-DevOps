@@ -1,101 +1,72 @@
-Rolling the Dice on DevOps
-Project Description
-"Rolling the Dice on DevOps" is a comprehensive CI/CD workflow and full-stack implementation project aimed at deploying and managing a scalable board game web application. This project automates the entire lifecycle of application development, from code quality checks to containerization, security audits, and performance monitoring.
+# **Rolling the Dice on DevOps**
 
-The application is deployed on AWS using Kubernetes, with advanced monitoring tools like Prometheus and Grafana, ensuring performance and reliability. Jenkins is utilized for continuous integration, while SonarQube and Nexus manage code quality and artifact storage.
+This project revolves around automating the continuous integration/continuous deployment (CI/CD) process using various DevOps tools. The process includes the integration of Docker, Kubernetes, Prometheus, Jenkins, Maven, SonarQube, Nexus, Trivy, Grafana, and KubeAudit.
 
-Architecture Diagram
-The architecture of the project showcases a seamless CI/CD pipeline with robust monitoring and security features, as illustrated below:
-![image](https://github.com/user-attachments/assets/764ffa90-94d7-4b6c-b2b5-09acea7ab87b)
+## **Project Description**
+The project focuses on streamlining the deployment process for the Board Game Database Full-Stack Web Application. This web application allows users to view, add, and edit board games and reviews. The application follows a role-based access system where users can add and review games, and managers can edit or delete reviews.
 
-Features
-User Management:
-Users can add board games and reviews.
-Managers can edit/delete reviews with additional privileges.
-Automation:
-Jenkins pipeline automates build, testing, deployment, and monitoring.
-Security:
-Kubeaudit ensures a secure Kubernetes cluster.
-Scalability:
-Kubernetes and Docker for containerized deployments.
-Monitoring:
-Real-time performance insights using Prometheus and Grafana.
-Architecture Diagram
+### **Deployment Details**
+- Deployed on AWS using Kubernetes for orchestration.
+- Security managed by Kubeaudit.
+- Code quality checked using SonarQube.
+- Artifact management handled by Nexus.
+- Continuous integration and deployment powered by Jenkins.
+- Application monitoring using Prometheus and Grafana.
 
-CI/CD Workflow
-The workflow automates the development lifecycle:
+## **Architecture Diagram**
 
-Requirement Change: End-user raises a ticket.
-Development: Developers commit code to GitHub.
-Quality Assurance:
-Unit Tests: Executed via Maven.
-Code Quality: Verified with SonarQube.
-Vulnerability Scanning: Performed using Trivy.
-Artifact Management:
-Artifacts built using Maven are pushed to Nexus.
-Containerization:
-Docker images are built, scanned, and pushed to the Docker registry.
-Deployment:
-Deployed on Kubernetes with security checks by Kubeaudit.
-Monitoring:
-Real-time performance tracked by Prometheus and Grafana.
+### **Board Game CI/CD Workflow**
 
-Technology Stack
-DevOps Tools:
-Jenkins: CI/CD automation.
-SonarQube: Code quality checks.
-Nexus: Artifact storage.
-Docker: Containerization.
-Kubernetes: Orchestration and scaling.
-Kubeaudit: Security audit.
-Monitoring Tools:
-Prometheus: Real-time metrics collection.
-Grafana: Visualization and dashboards.
-Black Box Exporter: Endpoint monitoring.
-Application Stack:
-Frontend: HTML, CSS, JavaScript
-Backend: Node.js, Express
-Database: MongoDB
-Deployment Steps
-1. AWS Setup
-Create a VPC and configure Security Groups.
-Launch 3 EC2 instances (1 Master, 2 Slaves).
-2. Kubernetes Configuration
-Install Kubernetes on all instances.
-Deploy Calico Networking and NGINX Ingress Controller.
-3. Jenkins and CI/CD Pipeline
-Set up Jenkins on the master node.
-Configure pipeline stages:
-Build with Maven.
-Run tests.
-Quality check (SonarQube).
-Push Docker images.
-Deploy on Kubernetes.
-4. Monitoring
-Install Prometheus, Grafana, and Black Box Exporter.
-Create Grafana dashboards for insights.
-Monitoring Dashboard
+<p align="center">
+    <img src="file-5m6Zfn9iYTmSWt73U6gtiR" alt="Board Game CI/CD Workflow" width="80%">
+</p>
 
-Access the Application
-Access the deployed application via the Kubernetes ingress endpoint:
+## **Implementation Steps**
 
-arduino
-Copy code
-http://<LoadBalancer-IP>
-Project Insights
-Performance Metrics:
+### 1. **Configure Private Environment in AWS**
 
-Jenkins build time and health monitored via Grafana.
-Application latency tracked by Prometheus.
-Security Audits:
+- Set up a Virtual Private Cloud (VPC).
+- Configure security groups for VM instance traffic control.
 
-Regular scans with Trivy and Kubeaudit.
-Continuous Deployment:
+### 2. **Configure VMs**
 
-Fully automated pipeline from development to production.
-Future Scope
-Add advanced analytics for user behavior.
-Implement role-based access control (RBAC) for better security.
-Introduce load testing with tools like JMeter.
-Contributors
-[Anurag Raut] 
+- Launch three VM instances.
+- Install Kubernetes and configure master and slave nodes.
+
+### 3. **Kubernetes Cluster Setup**
+
+- Initialize the cluster on the master node using `kubeadm init`.
+- Join the slave nodes with `kubeadm join`.
+
+### 4. **Networking and Ingress Setup**
+
+- Deploy Calico for networking.
+- Install NGINX as the Ingress Controller.
+
+### 5. **Security Setup**
+
+- Install Kubeaudit to monitor cluster security and run checks.
+
+### 6. **SonarQube and Nexus Configuration**
+
+- Set up SonarQube and Nexus servers.
+- Run SonarQube container on port 9000.
+- Run Nexus container on port 8081.
+
+### 7. **Jenkins Server Setup**
+
+- Install Jenkins on the server.
+- Configure Jenkins to run on port 8080.
+- Set up a Jenkins pipeline for building, testing, and deploying the application.
+
+### 8. **Application Monitoring with Prometheus and Grafana**
+
+- Install Prometheus on port 9090 and Grafana on port 3000.
+- Configure Grafana to visualize metrics collected by Prometheus.
+- Install Black Box Exporter on port 9115 to monitor app availability.
+- Set up a Grafana dashboard to monitor Jenkins performance.
+
+## **Conclusion**
+
+This project demonstrates a full CI/CD pipeline deployment on AWS, from security checks with KubeAudit to real-time monitoring via Grafana and Prometheus.
+
