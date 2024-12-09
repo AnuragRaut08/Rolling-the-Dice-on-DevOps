@@ -1,76 +1,101 @@
-# BoardgameListingWebApp
+Rolling the Dice on DevOps
+Project Description
+"Rolling the Dice on DevOps" is a comprehensive CI/CD workflow and full-stack implementation project aimed at deploying and managing a scalable board game web application. This project automates the entire lifecycle of application development, from code quality checks to containerization, security audits, and performance monitoring.
 
-## Description
+The application is deployed on AWS using Kubernetes, with advanced monitoring tools like Prometheus and Grafana, ensuring performance and reliability. Jenkins is utilized for continuous integration, while SonarQube and Nexus manage code quality and artifact storage.
 
-**Board Game Database Full-Stack Web Application.**
-This web application displays lists of board games and their reviews. While anyone can view the board game lists and reviews, they are required to log in to add/ edit the board games and their reviews. The 'users' have the authority to add board games to the list and add reviews, and the 'managers' have the authority to edit/ delete the reviews on top of the authorities of users.  
+Architecture Diagram
+The architecture of the project showcases a seamless CI/CD pipeline with robust monitoring and security features, as illustrated below:
+![image](https://github.com/user-attachments/assets/764ffa90-94d7-4b6c-b2b5-09acea7ab87b)
 
+Features
+User Management:
+Users can add board games and reviews.
+Managers can edit/delete reviews with additional privileges.
+Automation:
+Jenkins pipeline automates build, testing, deployment, and monitoring.
+Security:
+Kubeaudit ensures a secure Kubernetes cluster.
+Scalability:
+Kubernetes and Docker for containerized deployments.
+Monitoring:
+Real-time performance insights using Prometheus and Grafana.
+Architecture Diagram
 
-# Implementation PDF: [Click here! ](https://drive.google.com/file/d/1y45F4drh8qJTG7sIcsJ33KcGZyKKLJoF/view?usp=sharing)
-The application was deployed on AWS using Kubernetes for orchestration, with Calico networking and NGINX Ingress Controller managing traffic. Security was ensured with Kubeaudit. SonarQube and Nexus servers were employed for code quality and artifact management. Jenkins orchestrated continuous integration and deployment. Prometheus, Grafana, and Black Box Exporter monitored performance and provided insights.
+CI/CD Workflow
+The workflow automates the development lifecycle:
 
-## Architecture Diagram
-<div align="center">
-  <img src="![image](https://github.com/user-attachments/assets/74a181c8-03d6-4be6-8eb7-6141dd468f79)
-" alt="Logo" width="100%" height="100%">
-</div>
+Requirement Change: End-user raises a ticket.
+Development: Developers commit code to GitHub.
+Quality Assurance:
+Unit Tests: Executed via Maven.
+Code Quality: Verified with SonarQube.
+Vulnerability Scanning: Performed using Trivy.
+Artifact Management:
+Artifacts built using Maven are pushed to Nexus.
+Containerization:
+Docker images are built, scanned, and pushed to the Docker registry.
+Deployment:
+Deployed on Kubernetes with security checks by Kubeaudit.
+Monitoring:
+Real-time performance tracked by Prometheus and Grafana.
 
+Technology Stack
+DevOps Tools:
+Jenkins: CI/CD automation.
+SonarQube: Code quality checks.
+Nexus: Artifact storage.
+Docker: Containerization.
+Kubernetes: Orchestration and scaling.
+Kubeaudit: Security audit.
+Monitoring Tools:
+Prometheus: Real-time metrics collection.
+Grafana: Visualization and dashboards.
+Black Box Exporter: Endpoint monitoring.
+Application Stack:
+Frontend: HTML, CSS, JavaScript
+Backend: Node.js, Express
+Database: MongoDB
+Deployment Steps
+1. AWS Setup
+Create a VPC and configure Security Groups.
+Launch 3 EC2 instances (1 Master, 2 Slaves).
+2. Kubernetes Configuration
+Install Kubernetes on all instances.
+Deploy Calico Networking and NGINX Ingress Controller.
+3. Jenkins and CI/CD Pipeline
+Set up Jenkins on the master node.
+Configure pipeline stages:
+Build with Maven.
+Run tests.
+Quality check (SonarQube).
+Push Docker images.
+Deploy on Kubernetes.
+4. Monitoring
+Install Prometheus, Grafana, and Black Box Exporter.
+Create Grafana dashboards for insights.
+Monitoring Dashboard
 
+Access the Application
+Access the deployed application via the Kubernetes ingress endpoint:
 
+arduino
+Copy code
+http://<LoadBalancer-IP>
+Project Insights
+Performance Metrics:
 
+Jenkins build time and health monitored via Grafana.
+Application latency tracked by Prometheus.
+Security Audits:
 
-# Project Steps:
+Regular scans with Trivy and Kubeaudit.
+Continuous Deployment:
 
-1. **Configure Private Environment through VPC and Security Group in AWS:**
-   - Set up a Virtual Private Cloud (VPC) in AWS.
-   - Configure security groups to control inbound and outbound traffic to the VM instances.
-
-2. **Configure VMs:**
-   - Launch three VM instances: one for Kubernetes cluster master and two for slave nodes.
-   - Assign appropriate roles and permissions to these instances.
-   - Install Kubernetes on all VMs.
-
-3. **Deploy Kubernetes Cluster:**
-   - On the master instance, initialize the Kubernetes cluster using `kubeadm init` command.
-   - Join the slave nodes to the cluster using `kubeadm join` command.
-
-4. **Deploy Networking Solution and Ingress Controller on Master Node:**
-   - Deploy Calico networking solution and NGINX Ingress Controller on the master node.
-   - Configure networking and routing accordingly.
-
-5. **Install Kubeaudit for Cluster Security:**
-   - Install Kubeaudit to ensure cluster security.
-   - Run Kubeaudit to get reports on the cluster's security posture.
-
-6. **Create SonarQube and Nexus Servers:**
-   - Set up SonarQube and Nexus servers.
-   - Connect to these servers from the VM instances.
-   - Install Docker on each VM instance.
-
-7. **Run SonarQube and Nexus Containers:**
-   - Run SonarQube container on port 9000 and Nexus container on port 8081 within Docker.
-   - Ensure proper configurations and mappings for these containers.
-
-8. **Create Jenkins Server:**
-   - Set up a Jenkins server.
-   - SSH into the server.
-   - Install Jenkins and configure it to run on port 8080.
-
-9. **Build Jenkins Pipeline:**
-   - Define a pipeline in Jenkins using Pipeline Syntax.
-   - Include stages for building, testing, and deploying the application.
-   - Ensure the pipeline executes successfully.
-
-10. **Access the Board Game Application:**
-    - Access the deployed application through appropriate endpoints.
-    - Verify functionality and accessibility.
-
-11. **Setup Prometheus, Grafana, and Black Box Exporter:**
-    - Install Prometheus on port 9090, Grafana on port 3000, and Black Box Exporter on port 9115 on the cluster.
-    - Configure Prometheus to scrape metrics from the application components.
-    - Configure Grafana to visualize metrics collected by Prometheus.
-
-12. **Monitor Jenkins using Grafana Dashboard:**
-    - Download Node Exporter to monitor Jenkins on port 9100.
-    - Configure Grafana to display Jenkins-related metrics.
-    - Use Grafana dashboard to monitor Jenkins performance and health.
+Fully automated pipeline from development to production.
+Future Scope
+Add advanced analytics for user behavior.
+Implement role-based access control (RBAC) for better security.
+Introduce load testing with tools like JMeter.
+Contributors
+[Anurag Raut] 
