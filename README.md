@@ -11,8 +11,10 @@ The application was deployed on AWS using Kubernetes for orchestration, with Cal
 
 ## Architecture Diagram
 <div align="center">
-  <img src="./Documents/architecture.jpg" alt="Logo" width="100%" height="100%">
+  <img src="![image](https://github.com/user-attachments/assets/74a181c8-03d6-4be6-8eb7-6141dd468f79)
+" alt="Logo" width="100%" height="100%">
 </div>
+
 
 
 
