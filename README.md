@@ -63,6 +63,57 @@ The project focuses on streamlining the deployment process for the Board Game Da
 - Install Black Box Exporter on port 9115 to monitor app availability.
 - Set up a Grafana dashboard to monitor Jenkins performance.
 
+###**Prerequisites**
+Before you start, ensure you have the following tools installed:
+
+Docker
+Kubernetes
+Jenkins
+Maven
+SonarQube
+Nexus Repository
+Prometheus
+Grafana
+Trivy
+KubeAudit
+Installation
+To get the project up and running locally, follow these steps:
+
+1. Clone the repository
+bash
+Copy code
+git clone https://github.com/AnuragRaut08/Rolling-the-Dice-on-DevOps.git
+2. Docker & Kubernetes Setup
+Ensure Docker and Kubernetes are installed on your machine. Follow the official installation guides:
+
+Docker installation
+Kubernetes installation
+3. Start Jenkins, SonarQube, Nexus, Prometheus, and Grafana
+Use Docker to run the necessary containers for Jenkins, SonarQube, Nexus, Prometheus, and Grafana.
+
+bash
+Copy code
+docker-compose up
+(Make sure you have a docker-compose.yml for managing the containers.)
+
+4. Kubernetes Cluster Setup
+If you're running Kubernetes locally, ensure that kubectl is installed and your cluster is running. Then, apply the necessary Kubernetes manifests to deploy your app.
+
+5. Run the Application
+After all setups, you can run the application and visit it in your browser.
+
+##**Contributors**
+Anurag - Lead Developer -https://linkedin.com/in/anurag-raut-338b8b2b8
+
+##**License**
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+##**Author**
+**Anurag Raut**
+B.Tech in AI & Data Science
+
+
+
 ## **Conclusion**
 
 This project demonstrates a full CI/CD pipeline deployment on AWS, from security checks with KubeAudit to real-time monitoring via Grafana and Prometheus.
