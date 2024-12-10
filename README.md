@@ -5,7 +5,7 @@ This project revolves around automating the continuous integration/continuous de
 ## **Project Description**
 The project focuses on streamlining the deployment process for the Board Game Database Full-Stack Web Application. This web application allows users to view, add, and edit board games and reviews. The application follows a role-based access system where users can add and review games, and managers can edit or delete reviews.
 
-### **Deployment Details**
+##**Deployment Details**
 - Deployed on AWS using Kubernetes for orchestration.
 - Security managed by Kubeaudit.
 - Code quality checked using SonarQube.
@@ -14,7 +14,7 @@ The project focuses on streamlining the deployment process for the Board Game Da
 - Application monitoring using Prometheus and Grafana.
 
 
-### **Board Game CI/CD Workflow**
+## **Board Game CI/CD Workflow**
 ![image](https://github.com/user-attachments/assets/ecdcd84c-41d9-401a-a11e-beeea12daaa9)
 
 
@@ -63,7 +63,7 @@ The project focuses on streamlining the deployment process for the Board Game Da
 - Install Black Box Exporter on port 9115 to monitor app availability.
 - Set up a Grafana dashboard to monitor Jenkins performance.
 
-###**Prerequisites**
+**Prerequisites**
 Before you start, ensure you have the following tools installed:
 
 Docker
@@ -102,13 +102,13 @@ If you're running Kubernetes locally, ensure that kubectl is installed and your 
 5. Run the Application
 After all setups, you can run the application and visit it in your browser.
 
-##**Contributors**
+**Contributors**
 Anurag - Lead Developer -https://linkedin.com/in/anurag-raut-338b8b2b8
 
-##**License**
+**License**
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-##**Author**
+**Author**
 **Anurag Raut**
 B.Tech in AI & Data Science
 
