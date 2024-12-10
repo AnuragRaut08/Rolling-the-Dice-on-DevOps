@@ -5,7 +5,7 @@ This project revolves around automating the continuous integration/continuous de
 ## **Project Description**
 The project focuses on streamlining the deployment process for the Board Game Database Full-Stack Web Application. This web application allows users to view, add, and edit board games and reviews. The application follows a role-based access system where users can add and review games, and managers can edit or delete reviews.
 
-##**Deployment Details**
+**Deployment Details**
 - Deployed on AWS using Kubernetes for orchestration.
 - Security managed by Kubeaudit.
 - Code quality checked using SonarQube.
