@@ -110,7 +110,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 **Author**
 **Anurag Raut**
-B.Tech in AI & Data Science
+**B.Tech in AI & Data Science**
 
 
 
