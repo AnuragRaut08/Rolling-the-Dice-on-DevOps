@@ -91,8 +91,6 @@ Kubernetes installation
 3. Start Jenkins, SonarQube, Nexus, Prometheus, and Grafana
 Use Docker to run the necessary containers for Jenkins, SonarQube, Nexus, Prometheus, and Grafana.
 
-bash
-Copy code
 docker-compose up
 (Make sure you have a docker-compose.yml for managing the containers.)
 
