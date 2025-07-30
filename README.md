@@ -1,6 +1,6 @@
 # **Rolling the Dice on DevOps**
 
-This project revolves around automating the continuous integration/continuous deployment (CI/CD) process using various DevOps tools. The process includes the integration of Docker, Kubernetes, Prometheus, Jenkins, Maven, SonarQube, Nexus, Trivy, Grafana, and KubeAudit.
+This project revolves around automating the continuous integration/continuous deployment (CI/CD) process using various DevOps tools. The process mainly includes the integration of Docker, Kubernetes, Prometheus, Jenkins, Maven, SonarQube, Nexus, Trivy, Grafana, and KubeAudit.
 
 ## **Project Description**
 The project focuses on streamlining the deployment process for the Board Game Database Full-Stack Web Application. This web application allows users to view, add, and edit board games and reviews. The application follows a role-based access system where users can add and review games, and managers can edit or delete reviews.
