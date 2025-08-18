@@ -115,3 +115,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 This project demonstrates a full CI/CD pipeline deployment on AWS, from security checks within KubeAudit to real-time monitoring via Grafana and Prometheus.
 
+
