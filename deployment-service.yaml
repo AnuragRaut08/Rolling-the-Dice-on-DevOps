@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: boardgame-deployment
+  name: boardgame-deployment 
 spec:
   selector:
     matchLabels:
